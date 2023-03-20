@@ -27,7 +27,10 @@ const Login = () => {
               <span>Jobs</span>
             </Icons>
           </IconsWrapper>
+          <Bar />
         </Nav>
+        <JoinNow>Join now</JoinNow>
+        <SignIn>Sign in</SignIn>
       </Container>
     </>
   );
@@ -72,9 +75,11 @@ const IconsWrapper = styled.div`
       margin: auto;
     }
     opacity: 0.6;
-    &:hover{
+    &:hover {
       opacity: 1;
       cursor: pointer;
+    }
+    img {
     }
     // background-color: pink;
   }
@@ -101,5 +106,37 @@ const Nav = styled.div`
     }
   }
 `;
+const Bar = styled.div`
+  height: 5vh;
+  border: .001em solid #d9d9d9;
+  position: absolute;
+  left: 71.5vw;
+  top: 2.5vh;
+`;
 
+const JoinNow = styled.button`
+  position: absolute;
+  left: 72vw;
+  top: 2vh;
+  padding: .8em 1.5em;
+  border-radius: 2em;
+  background-color: transparent;
+   font-weight: 500;
+   opacity: .9;
+   &:hover{
+    cursor: pointer;
+    background-color: #f6f6f6;
+   }
+`;
+
+const SignIn = styled(JoinNow)`
+  left: 80vw;
+  border: 1.2px solid #0040ff;
+  color: #0040ff;
+  font-weight: 500;
+  &:hover{
+    background-color: rgba(204, 216, 255,.3);
+    color: #00061a;
+  }
+`;
 export default Login;
