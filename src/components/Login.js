@@ -47,6 +47,7 @@ const Login = () => {
             <Line><hr/>or<hr/></Line>
             <Google><img src="/images/google.svg"></img>Sign in with Google</Google>
           </Form>
+          <BgImage></BgImage>
         </Content>
       </Container>
     </>
@@ -161,7 +162,7 @@ const Heading = styled.h1`
   font-weight: 100;
   // color: rgba(102, 51, 0,.8);
   color: rgba(153, 51, 51, 0.9);
-  border: 1px solid black;
+  // border: 1px solid black;
   max-width: 50vw;
   position: absolute;
   top: 16vh;
@@ -169,32 +170,56 @@ const Heading = styled.h1`
   line-height: 1.2em;
 `;
 const Content = styled.div``;
+const BgImage = styled.div`
+background-image: url("images/login-hero.svg");
+background-repeat: no-repeat;
+position: relative;
+top: 15vh;
+left: 53vw;
+// border: 1px solid blue;
+height: 100vh;
+width: 50vw;
+`;
 const Form = styled.form`
-  border: 1px solid red;
+  // border: 1px solid red;
   position: absolute;
   top: 40vh;
   height: 50vh;
   width: 40vw;
   padding-left: 13vw;
   label {
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
     font-size: 0.9em;
     font-weight: 500;
     color: #4c4949;
   }
   input {
+    text-indent: 1.5em;
     display: block;
     border-radius: 0.3em;
     height: 7.5vh;
     width: 100%;
     margin-top: 0.5em;
     border: 1px solid #4c4949;
+    &:hover{
+      background-color: #f5f5f5;
+      border-color: black;
+      border-width: 2.3px;
+      box-shadow: 0px 0px 1px black;
+    }
   }
 `;
 const ForgotPassword = styled.p`
   color: #0a66c2;
   margin-top: 1.5em;
   font-weight: 500;
+  width: fit-content;
+  transition: all 367ms;
+  &:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #045664;
+  }
 `;
 const SignInButton = styled.div`
   // border: 1px solid red;
@@ -203,12 +228,16 @@ const SignInButton = styled.div`
   font-weight: 500;
   background-color: #0a66c2;
   border-radius: 2em;
-  padding: .7em;
+  padding: .8em;
   text-align: center;  
+  &:hover{
+    background-color: #3648D9;
+    cursor: pointer;
+  }
 `;
 const Line = styled.div`
 font-size: .9em;
-border: 1px solid blue;
+// border: 1px solid blue;
 color: black;
 text-align: center;
 background:transparent;
@@ -229,16 +258,28 @@ hr{
 }
 `;
 const Google = styled(SignInButton)`
-background-color: #f6f6f6;
+background-color: white;
 color: black;
 color: #4c4949;
+box-sizing: border-box;
+padding-bottom: .7em;
+padding-top: 0.4em;
 border: 1px solid #4c4949;
 img{
   display: inline-block;
-  // border: 1px solid red;
   position: relative;
   top: .3em;
   left: -.7em;
 }
+&:hover{
+  background-color: #f5f5f5;
+  color: black;
+}
 `;
+// const BgImage = styled.div`
+// border: 2px solid red;
+// height: 100px;
+// background-image: url("images/login-hero.svg");
+
+// `;
 export default Login;
