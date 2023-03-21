@@ -44,8 +44,14 @@ const Login = () => {
             <input id="password" type="password"></input>
             <ForgotPassword>Forgot password?</ForgotPassword>
             <SignInButton>Sign in</SignInButton>
-            <Line><hr/>or<hr/></Line>
-            <Google><img src="/images/google.svg"></img>Sign in with Google</Google>
+            <Line>
+              <hr />
+              or
+              <hr />
+            </Line>
+            <Google>
+              <img src="/images/google.svg"></img>Sign in with Google
+            </Google>
           </Form>
           <BgImage></BgImage>
         </Content>
@@ -76,6 +82,14 @@ const Icons = styled.button`
     }
   }
 `;
+const Content = styled.div`
+ @media only screen and (min-width: 1000px) and (max-width: 1300px){
+  // border: 2px solid red;
+  position: relative;
+  // padding-left: -10vw;
+  left: -13vw;
+ }
+`;
 const IconsWrapper = styled.div`
   // border: 2px solid yellow;
   position: relative;
@@ -83,7 +97,7 @@ const IconsWrapper = styled.div`
   color: #00000099;
   display: flex;
   ${Icons} {
-    // border: 1px solid red;
+    border: 1px solid transparent;
     margin-left: 1.2vw;
     height: 7vh;
     width: 4vw;
@@ -97,9 +111,19 @@ const IconsWrapper = styled.div`
       opacity: 1;
       cursor: pointer;
     }
-    img {
+    @media only screen and (min-width: 1000px) and (max-width: 1300px) {
+      // left: -2vw;
+      // background-color: pink;
     }
-    // background-color: pink;
+  }
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
+    width: 25vw;
+    justify-content: space-between;
+    // border: 2px solid red;
+    left: -9vw;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px){
+    display: none;
   }
 `;
 
@@ -123,6 +147,32 @@ const Nav = styled.div`
       display: block;
     }
   }
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
+    #btn-logo {
+      // border: 2px solid pink;
+      left: -16vw;
+      img{
+        height: 2em;
+      }
+    }
+    top: .6em;
+    position: relative;
+    // border: 1px solid red;
+    justify-content: space-evenly;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1000px){
+    // border: 1px dashed blue;
+    margin-top: 2vh;
+    justify-content: flex-start;
+    #btn-logo{
+      // border: 1px solid red;
+      left: 7vw;
+      img{
+        height: 1.3em;
+        // width: 100em;
+      }
+    }
+  }
 `;
 const Bar = styled.div`
   height: 5vh;
@@ -130,6 +180,12 @@ const Bar = styled.div`
   position: absolute;
   left: 71.5vw;
   top: 2.5vh;
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
+    left: 70vw;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 991px){
+    display: none;
+  }
 `;
 
 const JoinNow = styled.button`
@@ -145,6 +201,14 @@ const JoinNow = styled.button`
     cursor: pointer;
     background-color: #f6f6f6;
   }
+  @media only screen and (max-width: 1300px) and (min-width: 1000px) {
+    left: 70.5vw;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1000px){
+    // border: 1px solid red;
+    top: .2em;
+    left: 65vw;
+  }
 `;
 
 const SignIn = styled(JoinNow)`
@@ -156,29 +220,44 @@ const SignIn = styled(JoinNow)`
     background-color: rgba(204, 216, 255, 0.3);
     color: #00061a;
   }
+  @media only screen and (max-width: 1300px) and (min-width: 1000px) {
+    left: 84vw;
+  }
 `;
 const Heading = styled.h1`
+border: 1px solid red;
   font-size: 3.5em;
   font-weight: 100;
-  // color: rgba(102, 51, 0,.8);
   color: rgba(153, 51, 51, 0.9);
-  // border: 1px solid black;
-  max-width: 50vw;
+  max-width: 55vw;
   position: absolute;
   top: 16vh;
   left: 13vw;
   line-height: 1.2em;
+  @media only screen and (min-width: 1000px) and (max-width: 1300px){
+    top: 1.2em;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1100px){
+    max-width: 50vw;
+  }
+  // @media only screen and (min-width: 768px) and (max-width: 1000px){
+  
+  // }
 `;
-const Content = styled.div``;
 const BgImage = styled.div`
-background-image: url("images/login-hero.svg");
-background-repeat: no-repeat;
-position: relative;
-top: 15vh;
-left: 53vw;
-// border: 1px solid blue;
-height: 100vh;
-width: 50vw;
+  background-image: url("images/login-hero.svg");
+  background-repeat: no-repeat;
+  position: relative;
+  top: 15vh;
+  left: 53vw;
+  // border: 1px solid blue;
+  height: 100vh;
+  width: 50vw;
+  @media only screen and (min-width: 1000px) and (max-width: 1300px){
+   left: 62vw;
+   height: 130vh;
+   width: 60vw;
+  }
 `;
 const Form = styled.form`
   // border: 1px solid red;
@@ -201,12 +280,27 @@ const Form = styled.form`
     width: 100%;
     margin-top: 0.5em;
     border: 1px solid #4c4949;
-    &:hover{
+    &:hover {
       background-color: #f5f5f5;
       border-color: black;
       border-width: 2.3px;
       box-shadow: 0px 0px 1px black;
     }
+  }
+  @media only screen and (min-width: 1000px) and (max-width: 1300px){
+    top: 14.5em;
+    width: 50vw;
+    input{
+      height: 10vh;
+    }
+  }
+  @media only screen and (min-width: 1000px) and (max-width: 1150px){
+    input{
+      height: 3.3em;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1100px){
+    top: 20em;
   }
 `;
 const ForgotPassword = styled.p`
@@ -215,7 +309,7 @@ const ForgotPassword = styled.p`
   font-weight: 500;
   width: fit-content;
   transition: all 367ms;
-  &:hover{
+  &:hover {
     cursor: pointer;
     text-decoration: underline;
     color: #045664;
@@ -228,53 +322,63 @@ const SignInButton = styled.div`
   font-weight: 500;
   background-color: #0a66c2;
   border-radius: 2em;
-  padding: .8em;
-  text-align: center;  
-  &:hover{
-    background-color: #3648D9;
+  padding: 0.8em;
+  text-align: center;
+  &:hover {
+    background-color: #3648d9;
     cursor: pointer;
+  }
+  @media only screen and (min-width: 1000px) and (max-width: 1300px){
+    // margin-top: 1em;
   }
 `;
 const Line = styled.div`
-font-size: .9em;
-// border: 1px solid blue;
-color: black;
-text-align: center;
-background:transparent;
-padding: 1.2em;
-hr{
-  width: 50%;
-  border: 1px solid rgba(76,76,73,.3);
-  &:nth-child(1){
-    position: relative;
-    top: .8em;
-    left: -1em;
+  font-size: 0.9em;
+  // border: 1px solid blue;
+  color: black;
+  text-align: center;
+  background: transparent;
+  padding: 1.2em;
+  hr {
+    width: 50%;
+    border: 1px solid rgba(76, 76, 73, 0.3);
+    &:nth-child(1) {
+      position: relative;
+      top: 0.8em;
+      left: -1em;
+    }
+    &:nth-child(2) {
+      position: relative;
+      top: -0.7em;
+      left: 14em;
+    }
   }
-  &:nth-child(2){
-    position: relative;
-    top: -.7em;
-    left: 14em;
+  @media only screen and (min-width: 1000px) and (max-width: 1680px) {
+    //  position: relative;
+    //  left: 20em;
   }
-}
 `;
 const Google = styled(SignInButton)`
-background-color: white;
-color: black;
-color: #4c4949;
-box-sizing: border-box;
-padding-bottom: .7em;
-padding-top: 0.4em;
-border: 1px solid #4c4949;
-img{
-  display: inline-block;
-  position: relative;
-  top: .3em;
-  left: -.7em;
-}
-&:hover{
-  background-color: #f5f5f5;
+  background-color: white;
   color: black;
-}
+  color: #4c4949;
+  box-sizing: border-box;
+  padding-bottom: 0.7em;
+  padding-top: 0.4em;
+  border: 1px solid #4c4949;
+  img {
+    display: inline-block;
+    position: relative;
+    top: 0.3em;
+    left: -0.7em;
+  }
+  &:hover {
+    background-color: #f5f5f5;
+    color: black;
+  }
+  @media only screen and (min-width: 1000px) and (max-width: 1300px){
+    margin-top: -.4em;
+  }
 `;
 // const BgImage = styled.div`
 // border: 2px solid red;
