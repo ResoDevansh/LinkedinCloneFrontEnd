@@ -33,8 +33,7 @@ const Login = () => {
         <SignIn>Sign in</SignIn>
         <Content>
           <Heading>
-            Welcome to your <br />
-            professional community
+            Welcome to your <br /> professional community
           </Heading>
           <Form>
             <label htmlFor="email">Email or phone</label>
@@ -45,9 +44,9 @@ const Login = () => {
             <ForgotPassword>Forgot password?</ForgotPassword>
             <SignInButton>Sign in</SignInButton>
             <Line>
-              <hr />
-              or
-              <hr />
+              <hr id="first-line" />
+              <span>or</span>
+              <hr id="second-line" />
             </Line>
             <Google>
               <img src="/images/google.svg"></img>Sign in with Google
@@ -83,12 +82,20 @@ const Icons = styled.button`
   }
 `;
 const Content = styled.div`
- @media only screen and (min-width: 1000px) and (max-width: 1300px){
-  // border: 2px solid red;
-  position: relative;
-  // padding-left: -10vw;
-  left: -13vw;
- }
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
+    // border: 2px solid red;
+    position: relative;
+    // padding-left: -10vw;
+    left: -13vw;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1000px) {
+    position: relative;
+    left: -12vw;
+  }
+  @media only screen and (max-width: 768px) {
+    position: relative;
+    left: -11vw;
+  }
 `;
 const IconsWrapper = styled.div`
   // border: 2px solid yellow;
@@ -122,7 +129,10 @@ const IconsWrapper = styled.div`
     // border: 2px solid red;
     left: -9vw;
   }
-  @media only screen and (min-width: 768px) and (max-width: 991px){
+  @media only screen and (min-width: 768px) and (max-width: 1000px) {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -151,25 +161,34 @@ const Nav = styled.div`
     #btn-logo {
       // border: 2px solid pink;
       left: -16vw;
-      img{
+      img {
         height: 2em;
       }
     }
-    top: .6em;
+    top: 0.2em;
     position: relative;
     // border: 1px solid red;
     justify-content: space-evenly;
   }
-  @media only screen and (min-width: 768px) and (max-width: 1000px){
+  @media only screen and (min-width: 768px) and (max-width: 1000px) {
     // border: 1px dashed blue;
-    margin-top: 2vh;
+    margin-top: 1.5em;
     justify-content: flex-start;
-    #btn-logo{
+    #btn-logo {
       // border: 1px solid red;
       left: 7vw;
-      img{
+      img {
         height: 1.3em;
         // width: 100em;
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    #btn-logo {
+      top: 1.2em;
+      left: -36vw;
+      img {
+        height: 1.2em;
       }
     }
   }
@@ -182,8 +201,12 @@ const Bar = styled.div`
   top: 2.5vh;
   @media only screen and (min-width: 1000px) and (max-width: 1300px) {
     left: 70vw;
+    top: 0.5em;
   }
-  @media only screen and (min-width: 768px) and (max-width: 991px){
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
     display: none;
   }
 `;
@@ -204,10 +227,13 @@ const JoinNow = styled.button`
   @media only screen and (max-width: 1300px) and (min-width: 1000px) {
     left: 70.5vw;
   }
-  @media only screen and (min-width: 768px) and (max-width: 1000px){
+  @media only screen and (min-width: 768px) and (max-width: 1000px) {
     // border: 1px solid red;
-    top: .2em;
+    top: 0.6em;
     left: 65vw;
+  }
+  @media only screen and (max-width: 768px) {
+    left: 55vw;
   }
 `;
 
@@ -223,9 +249,14 @@ const SignIn = styled(JoinNow)`
   @media only screen and (max-width: 1300px) and (min-width: 1000px) {
     left: 84vw;
   }
+  @media only screen and (max-width: 768px) {
+    padding: 0.8em;
+    width: 6em;
+    left: 76vw;
+  }
 `;
 const Heading = styled.h1`
-border: 1px solid red;
+  // border: 1px solid red;
   font-size: 3.5em;
   font-weight: 100;
   color: rgba(153, 51, 51, 0.9);
@@ -234,15 +265,30 @@ border: 1px solid red;
   top: 16vh;
   left: 13vw;
   line-height: 1.2em;
-  @media only screen and (min-width: 1000px) and (max-width: 1300px){
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
     top: 1.2em;
   }
-  @media only screen and (min-width: 768px) and (max-width: 1100px){
+  @media only screen and (min-width: 860px) and (max-width: 1100px) {
     max-width: 50vw;
   }
-  // @media only screen and (min-width: 768px) and (max-width: 1000px){
-  
-  // }
+  @media only screen and (min-width: 768px) and (max-width: 1000px) {
+    top: 1.2em;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 860px) {
+    max-width: 47vw;
+  }
+  @media only screen and (max-width: 768px) {
+    height: 1.2em;
+    min-width: 100vw;
+    font-size: 2em;
+    top: 2.3em;
+    // left: 3.1em;
+    left: 13vw;
+    white-space: no-wrap;
+    br {
+      display: none;
+    }
+  }
 `;
 const BgImage = styled.div`
   background-image: url("images/login-hero.svg");
@@ -250,13 +296,23 @@ const BgImage = styled.div`
   position: relative;
   top: 15vh;
   left: 53vw;
-  // border: 1px solid blue;
   height: 100vh;
   width: 50vw;
-  @media only screen and (min-width: 1000px) and (max-width: 1300px){
-   left: 62vw;
-   height: 130vh;
-   width: 60vw;
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
+    left: 62vw;
+    height: 130vh;
+    width: 60vw;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1000px) {
+    left: 68vw;
+    background-size: 140%;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1100px) {
+    left: 65vw;
+  }
+  @media only screen and (max-width: 768px) {
+    top: 97vh;
+    left: 35vw;
   }
 `;
 const Form = styled.form`
@@ -287,20 +343,35 @@ const Form = styled.form`
       box-shadow: 0px 0px 1px black;
     }
   }
-  @media only screen and (min-width: 1000px) and (max-width: 1300px){
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
     top: 14.5em;
     width: 50vw;
-    input{
+    input {
       height: 10vh;
     }
   }
-  @media only screen and (min-width: 1000px) and (max-width: 1150px){
-    input{
+  @media only screen and (min-width: 1000px) and (max-width: 1150px) {
+    input {
       height: 3.3em;
     }
   }
-  @media only screen and (min-width: 768px) and (max-width: 1100px){
+  @media only screen and (min-width: 768px) and (max-width: 1100px) {
     top: 20em;
+    width: 65%;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 860px) {
+    top: 23em;
+    width: 62%;
+  }
+  @media only screen and (max-width: 768px) {
+    // top: 9em;
+    top: 37vw;
+    input {
+      width: 92vw;
+    }
+  }
+  @media only screen and (min-width: 558px) and (max-width: 768px) {
+    top: 9em;
   }
 `;
 const ForgotPassword = styled.p`
@@ -328,34 +399,70 @@ const SignInButton = styled.div`
     background-color: #3648d9;
     cursor: pointer;
   }
-  @media only screen and (min-width: 1000px) and (max-width: 1300px){
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
     // margin-top: 1em;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 94vw;
   }
 `;
 const Line = styled.div`
+border: 1px solid red;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+  span {
+    display: inline-block;
+    margin: auto;
+    border: 1px solid blue;
+  }
   font-size: 0.9em;
   // border: 1px solid blue;
   color: black;
   text-align: center;
-  background: transparent;
+  // background: transparent;
   padding: 1.2em;
-  hr {
-    width: 50%;
+  #first-line {
+    width: 12vw;
     border: 1px solid rgba(76, 76, 73, 0.3);
-    &:nth-child(1) {
-      position: relative;
-      top: 0.8em;
-      left: -1em;
+    position: relative;
+  }
+  #second-line {
+    width: 12vw;
+    border: 1px solid rgba(76, 76, 73, 0.3);
+    position: relative;
+  }
+  @media only screen and (min-width: 740px) and (max-width: 1300px) {
+    #second-line {
+      width: 18vw;
+      left: .5vw;
+      border: 1px solid red;
     }
-    &:nth-child(2) {
-      position: relative;
-      top: -0.7em;
-      left: 14em;
+    #first-line {
+      width: 18vw;
+      left: 1vw;
+      border: 1px solid blue;
     }
   }
-  @media only screen and (min-width: 1000px) and (max-width: 1680px) {
-    //  position: relative;
-    //  left: 20em;
+  @media only screen and (max-width: 768px) {
+    width: 300%;
+    #first-line {
+      width: 43vw;
+      // left: -0.5em;
+      position: relative;
+      top: 1.1em;
+    }
+    #second-line {
+      width: 43vw;
+      position: relative;
+      // left: 47vw;
+      top: -0.3em;
+    }
+    span {
+      position: relative;
+      left: 34vw;
+      top: 0.4em;
+    }
   }
 `;
 const Google = styled(SignInButton)`
@@ -376,8 +483,8 @@ const Google = styled(SignInButton)`
     background-color: #f5f5f5;
     color: black;
   }
-  @media only screen and (min-width: 1000px) and (max-width: 1300px){
-    margin-top: -.4em;
+  @media only screen and (min-width: 1000px) and (max-width: 1300px) {
+    margin-top: -0.4em;
   }
 `;
 // const BgImage = styled.div`
