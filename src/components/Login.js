@@ -69,7 +69,6 @@ const Icons = styled.button`
   position: relative;
   max-width: 5vw;
   span {
-    // display: inline-block;
     position: relative;
     top: 0.25em;
     left: 0.2em;
@@ -83,9 +82,7 @@ const Icons = styled.button`
 `;
 const Content = styled.div`
   @media only screen and (min-width: 1000px) and (max-width: 1300px) {
-    // border: 2px solid red;
     position: relative;
-    // padding-left: -10vw;
     left: -13vw;
   }
   @media only screen and (min-width: 768px) and (max-width: 1000px) {
@@ -98,7 +95,6 @@ const Content = styled.div`
   }
 `;
 const IconsWrapper = styled.div`
-  // border: 2px solid yellow;
   position: relative;
   left: -9.2vw;
   color: #00000099;
@@ -159,7 +155,6 @@ const Nav = styled.div`
   }
   @media only screen and (min-width: 1000px) and (max-width: 1300px) {
     #btn-logo {
-      // border: 2px solid pink;
       left: -16vw;
       img {
         height: 2em;
@@ -167,15 +162,12 @@ const Nav = styled.div`
     }
     top: 0.2em;
     position: relative;
-    // border: 1px solid red;
     justify-content: space-evenly;
   }
   @media only screen and (min-width: 768px) and (max-width: 1000px) {
-    // border: 1px dashed blue;
     margin-top: 1.5em;
     justify-content: flex-start;
     #btn-logo {
-      // border: 1px solid red;
       left: 7vw;
       img {
         height: 1.3em;
@@ -228,7 +220,6 @@ const JoinNow = styled.button`
     left: 70.5vw;
   }
   @media only screen and (min-width: 768px) and (max-width: 1000px) {
-    // border: 1px solid red;
     top: 0.6em;
     left: 65vw;
   }
@@ -256,7 +247,6 @@ const SignIn = styled(JoinNow)`
   }
 `;
 const Heading = styled.h1`
-  // border: 1px solid red;
   font-size: 3.5em;
   font-weight: 100;
   color: rgba(153, 51, 51, 0.9);
@@ -282,7 +272,6 @@ const Heading = styled.h1`
     min-width: 100vw;
     font-size: 2em;
     top: 2.3em;
-    // left: 3.1em;
     left: 13vw;
     white-space: no-wrap;
     br {
@@ -316,14 +305,12 @@ const BgImage = styled.div`
   }
 `;
 const Form = styled.form`
-  // border: 1px solid red;
   position: absolute;
   top: 40vh;
   height: 50vh;
   width: 40vw;
   padding-left: 13vw;
   label {
-    // border: 1px solid yellow;
     font-size: 0.9em;
     font-weight: 500;
     color: #4c4949;
@@ -387,7 +374,6 @@ const ForgotPassword = styled.p`
   }
 `;
 const SignInButton = styled.div`
-  // border: 1px solid red;
   margin-top: 1.2em;
   color: #ffffff;
   font-weight: 500;
@@ -407,61 +393,34 @@ const SignInButton = styled.div`
   }
 `;
 const Line = styled.div`
-border: 1px solid red;
 display: flex;
 align-items: center;
-justify-content: space-evenly;
+justify-content: space-between;
+font-size: 0.9em;
+margin-top: 2vw;
   span {
     display: inline-block;
     margin: auto;
-    border: 1px solid blue;
   }
-  font-size: 0.9em;
-  // border: 1px solid blue;
-  color: black;
-  text-align: center;
-  // background: transparent;
-  padding: 1.2em;
   #first-line {
-    width: 12vw;
+    width: 45%;
     border: 1px solid rgba(76, 76, 73, 0.3);
     position: relative;
   }
   #second-line {
-    width: 12vw;
+    width: 45%;
     border: 1px solid rgba(76, 76, 73, 0.3);
     position: relative;
   }
-  @media only screen and (min-width: 740px) and (max-width: 1300px) {
-    #second-line {
-      width: 18vw;
-      left: .5vw;
-      border: 1px solid red;
+  @media only screen and (max-width: 768px){
+    width: 92vw;
+    position: relative;
+    left: 1vw;
+    #first-line{
+      width: 45%;
     }
-    #first-line {
-      width: 18vw;
-      left: 1vw;
-      border: 1px solid blue;
-    }
-  }
-  @media only screen and (max-width: 768px) {
-    width: 300%;
-    #first-line {
-      width: 43vw;
-      // left: -0.5em;
-      position: relative;
-      top: 1.1em;
-    }
-    #second-line {
-      width: 43vw;
-      position: relative;
-      // left: 47vw;
-      top: -0.3em;
-    }
-    span {
-      position: relative;
-      left: 34vw;
-      top: 0.4em;
+    #second-line{
+      width: 45%;
     }
   }
 `;
@@ -485,12 +444,7 @@ const Google = styled(SignInButton)`
   }
   @media only screen and (min-width: 1000px) and (max-width: 1300px) {
     margin-top: -0.4em;
+    margin-top: 2em;
   }
 `;
-// const BgImage = styled.div`
-// border: 2px solid red;
-// height: 100px;
-// background-image: url("images/login-hero.svg");
-
-// `;
 export default Login;
