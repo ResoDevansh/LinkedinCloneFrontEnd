@@ -71,6 +71,11 @@ const Logo = styled.div`
   span {
     display: inline-block;
   }
+  @media only screen and (max-width: 1024px){
+    position: relative;
+    left: -10vw;
+    border: 1px solid blue;
+  }
 `;
 const SearchIcon = styled.div``;
 const Search = styled.div`
@@ -104,12 +109,13 @@ const NavList = styled.div`
   position: absolute;
   left: 45vw;
   top: 0.3em;
-  // width: 50vw;
+  width: 50vw;
   display: flex;
   // justify-content: space-evenly;
   align-items: center;
   // align-content: center;
   #user {
+    padding-right: 1em;
     img{
       height: 1.5em;
     }
@@ -117,16 +123,48 @@ const NavList = styled.div`
       // width: 10em;
       left: -1.8em;
     }
+    @media only screen and (max-width: 768px){
+      padding-right: 0;
+    }
+    @media only screen and (max-width: 860px){
+      margin-right: -1em;
+    }
   }
   #work{
-    padding-left: .8em;
+    padding-left: 2em;
+    span{
+      left: -2em;
+    }
+    @media only screen and (max-width: 768px){
+      padding-left: 1em;
+    }
+  }
+  #jobs{
+    padding-right: 1em;
     span{
       left: -2em;
     }
   }
-  #jobs{
+  #network{
+    padding-left: 1em;
+    padding-right: .5em;
     span{
-      left: -2em;
+      left: -3.5em;
+    }
+  }
+  #messaging{
+    span{
+      left: -3em;
+    }
+  }
+  #home{
+    span{
+      left: -2.2em;
+    }
+  }
+  #notifications{
+    span{
+      left: -3em;
     }
   }
   #home:after {
@@ -147,9 +185,15 @@ const NavList = styled.div`
     border: 1px solid grey;
     position: absolute;
     top: -0.6em;
-    left: 24em;
+    left: 26em;
     height: 3.5em;
     opacity: 1;
+    @media only screen and (max-width: 860px){
+      left: 29em;
+    }
+  }
+  @media only screen and (max-width: 1024px){
+    left: 15vw;
   }
 `;
 const NavIcons = styled.div`
@@ -186,7 +230,14 @@ const NavIcons = styled.div`
     font-size: 0.75em;
     font-weight: 400;
     border: 1px solid red;
+    @media only screen and (max-width: 860px){
+      display: none;
+    }
   }
+  @media only screen and (max-width: 860px){
+      min-width: 5em;
+      border: 1px solid blue;
+    }
 `;
 const Ad = styled.div`
   font-size: 0.8em;
