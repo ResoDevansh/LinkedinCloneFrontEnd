@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import Header from './Header'
+import Section from './Section'
 
 const Home = () => {
-    return (<Body><h1><Header/></h1></Body>)
+    return (<Body><Header/><Section/></Body>)
 }
 
 const Body = styled.div`
