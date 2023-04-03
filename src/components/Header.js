@@ -62,6 +62,7 @@ const Nav = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 `;
 const Logo = styled.div`
   margin-left: 13vw;
@@ -102,6 +103,146 @@ const Search = styled.div`
   @media only screen and (max-width: 1024px) {
     display: none;
   }
+`;
+// const NavList = styled.div`
+//   // border: 2px solid magenta;
+//   // height: 2.5em;
+//   position: absolute;
+//   left: 45vw;
+//   top: 0.3em;
+//   width: 50vw;
+//   display: flex;
+//   // justify-content: space-evenly;
+//   align-items: center;
+//   // align-content: center;
+//   #user {
+//     padding-right: 1em;
+//     img{
+//       height: 1.5em;
+//     }
+//     span{
+//       // width: 10em;
+//       left: -1.8em;
+//     }
+//     @media only screen and (max-width: 768px){
+//       padding-right: 0;
+//     }
+//     @media only screen and (max-width: 860px){
+//       margin-right: -1em;
+//     }
+//   }
+//   #work{
+//     padding-left: 2em;
+//     span{
+//       left: -2em;
+//     }
+//     @media only screen and (max-width: 768px){
+//       padding-left: 1em;
+//     }
+//   }
+//   #jobs{
+//     padding-right: 1em;
+//     span{
+//       left: -2em;
+//     }
+//   }
+//   #network{
+//     padding-left: 1em;
+//     padding-right: .5em;
+//     span{
+//       left: -3.5em;
+//     }
+//   }
+//   #messaging{
+//     span{
+//       left: -3em;
+//     }
+//   }
+//   #home{
+//     opacity: 1;
+//     span{
+//       left: -2.2em;
+//     }
+//   }
+//   #notifications{
+//     span{
+//       left: -3em;
+//     }
+//   }
+//   #home:after {
+//     content: "";
+//     position: absolute;
+//     top: 3.2em;
+//     left: -1.2em;
+//     display: inline-block;
+//     width: 4em;
+//     // width: 100%;
+//     border: 1px solid black;
+//     -webkit-transform: rotate(180deg);
+//     opacity: 1;
+//   }
+//   #user:after {
+//     content: "";
+//     display: inline-block;
+//     border: 1px solid grey;
+//     position: absolute;
+//     top: -0.6em;
+//     left: 26em;
+//     height: 3.5em;
+//     opacity: 1;
+//     @media only screen and (max-width: 860px){
+//       left: 29em;
+//     }
+//   }
+//   @media only screen and (max-width: 1024px){
+//     left: 15vw;
+//   }
+// `;
+const NavIcons = styled.div`
+  // padding-left: 1em;
+  max-width: 5em;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid green;
+  width: fit-content;
+  transition: all 267ms ease-in;
+  display: flex;
+  align-items: center;
+  // &>#home{
+  //   border: 1px solid red;
+  // }
+  &:active,
+  &:hover {
+    color: black;
+    span {
+      color: black;
+      opacity: 1;
+    }
+    img{
+      opacity: 1;
+    }
+  }
+  img{
+    opacity: .6;
+  }
+  span {
+    opacity: 0.7;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    top: 1.6em;
+    left: -2vw;
+    font-size: 0.75em;
+    font-weight: 400;
+    border: 1px solid red;
+    @media only screen and (max-width: 860px){
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 860px){
+      min-width: 5em;
+      border: 1px solid blue;
+    }
 `;
 const NavList = styled.div`
   // border: 2px solid magenta;
@@ -158,6 +299,9 @@ const NavList = styled.div`
     }
   }
   #home{
+    img{
+      opacity: 1;
+    }
     span{
       left: -2.2em;
     }
@@ -195,49 +339,6 @@ const NavList = styled.div`
   @media only screen and (max-width: 1024px){
     left: 15vw;
   }
-`;
-const NavIcons = styled.div`
-  // padding-left: 1em;
-  max-width: 5em;
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid green;
-  width: fit-content;
-  transition: all 267ms ease-in;
-  display: flex;
-  align-items: center;
-  &:active,
-  &:hover {
-    color: black;
-    span {
-      color: black;
-      opacity: 1;
-    }
-    img{
-      opacity: 1;
-    }
-  }
-  img{
-    opacity: .7;
-  }
-  span {
-    opacity: 0.7;
-    display: inline-block;
-    position: relative;
-    white-space: nowrap;
-    top: 1.6em;
-    left: -2vw;
-    font-size: 0.75em;
-    font-weight: 400;
-    border: 1px solid red;
-    @media only screen and (max-width: 860px){
-      display: none;
-    }
-  }
-  @media only screen and (max-width: 860px){
-      min-width: 5em;
-      border: 1px solid blue;
-    }
 `;
 const Ad = styled.div`
   font-size: 0.8em;
