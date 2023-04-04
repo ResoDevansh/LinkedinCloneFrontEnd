@@ -4,23 +4,23 @@ import styled from "styled-components";
 const Middle = () => {
   return (
     <Container>
-      <img id="pp" src="/images/profileimg.jpg" alt="broken"/>
+      <img id="pp" src="/images/profileimg.jpg" alt="broken" />
       <button id="post">Start a post</button>
       <Tools>
         <button>
-          <img src="/images/phototool.svg" alt="broken"/>
+          <img src="/images/phototool.svg" alt="broken" />
           <span>Photo</span>
         </button>
         <button>
-          <img src="/images/videotool.svg" alt="broken"/>
+          <img src="/images/videotool.svg" alt="broken" />
           <span>Video</span>
         </button>
         <button>
-          <img src="/images/eventtool.svg" alt="broken"/>
+          <img src="/images/eventtool.svg" alt="broken" />
           <span>Event</span>
         </button>
         <button>
-          <img src="/images/articeltool.svg" alt="broken"/>
+          <img src="/images/articeltool.svg" alt="broken" />
           <span>Write article</span>
         </button>
       </Tools>
@@ -38,8 +38,8 @@ const Middle = () => {
             </About>
           </div>
           <FollowOrConnect>
-                      {/* <img src="/images/plus-icon.svg" /> &nbsp; */}
-                      	&#10133;
+            {/* <img src="/images/plus-icon.svg" /> &nbsp; */}
+            &#10133;
             <span>Follow</span>
           </FollowOrConnect>
         </Header>
@@ -58,10 +58,50 @@ const Middle = () => {
             14 of my 25-day block!
           </div>
           <div id="imgs">
-            <img src="/images/workout.jpg" alt="broken"/>
+            <img src="/images/workout.jpg" alt="broken" />
           </div>
         </Content>
-        <Footer></Footer>
+        <Footer>
+          <Reactions>
+            <R1>
+              <img
+                id="first"
+                src="https://static.licdn.com/sc/h/8ekq8gho1ruaf8i7f86vd1ftt"
+                alt="broken"
+              />
+              <img
+                id="second"
+                src="https://static.licdn.com/sc/h/3wqhxqtk2l554o70ur3kessf1"
+                alt="broken"
+              />
+              <img
+                id="third"
+                src="https://static.licdn.com/sc/h/cpho5fghnpme8epox8rdcds22"
+                alt="broken"
+              />
+              <span>1000</span>
+            </R1>
+            <R2>171 comments &#9679; 29 reposts</R2>
+          </Reactions>
+          <Share>
+            <div>
+              <img src="/images/like.png" id="like" alt="broken"/>
+              <span>Like</span>
+            </div>
+            <div>
+              <img src="/images/comment.svg" id="comment" alt="broken"/>
+              <span>Comment</span>
+            </div>
+            <div>
+              <img src="/images/repost.png" id="repost" alt="broken"/>
+              <span>Repost</span>
+            </div>
+            <div>
+              <img src="/images/send.svg" id="send" alt="broken"/>
+              <span>Send</span>
+            </div>
+          </Share>
+        </Footer>
       </Post>
     </Container>
   );
@@ -133,7 +173,7 @@ const Tools = styled.div`
 `;
 
 const Post = styled.div`
-//   border: 1px solid red;
+  border: 1px solid red;
   margin-top: 2em;
   background-color: white;
 `;
@@ -141,7 +181,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-//   border: 1px solid green;
+  //   border: 1px solid green;
   // height: 5em;
   padding: 0;
   #intro {
@@ -163,7 +203,7 @@ const Name = styled.div`
   font-size: 0.9em;
   font-weight: 500;
   cursor: pointer;
-//   border: 1px solid green;
+  //   border: 1px solid green;
   width: fit-content;
 `;
 const About = styled.div`
@@ -201,13 +241,78 @@ const FollowOrConnect = styled.div`
   position: relative;
   cursor: pointer;
   color: blue;
-//   border: 1px solid red;
-  padding: .5em;
-  &>span{
+  //   border: 1px solid red;
+  padding: 0.5em;
+  & > span {
     font-weight: 500;
+  }
+  &:hover {
+    background-color: #efedec;
+  }
+`;
+const Reactions = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const R1 = styled.div`
+  display: flex;
+  align-items: center;
+  padding-left: 0.5em;
+  #first,
+  #second,
+  #third {
+    z-index: 1;
+    position: relative;
+  }
+  #second {
+    left: -5%;
+  }
+  #third {
+    left: -15%;
+  }
+  span {
+    font-size: 0.7em;
+    position: relative;
+    left: -2%;
+  }
+`;
+const R2 = styled.div`
+  font-size: 0.75em;
+  color: grey;
+  // border: 1px solid blue;
+  margin-right: 1em;
+`;
+
+const Share = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 98%;
+  padding: 0;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-top: 1%;
+  margin-left: 1%;
+  border-top: 1px solid grey;
+  #like {
+    height: 3vh;
+  }
+  #repost {
+    height: 3vh;
+  }
+  div {
+    // border: 1px solid magenta;
+    padding: 0.5em;
+    display: flex;
+    transition: all 100ms ease-in-out;
+    align-items: center;
+    & > span {
+      margin-left: 5%;
     }
-    &:hover{
-        background-color: #efedec;
+    &:hover {
+      cursor: pointer;
+      // opacity: .5;
+      background-color: #d2d1d1;
     }
+  }
 `;
 export default Middle;

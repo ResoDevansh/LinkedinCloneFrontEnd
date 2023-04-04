@@ -15,7 +15,7 @@ const Section = () => {
 };
 
 const Container = styled.div`
-    border: 1px solid red;
+    // border: 1px solid red;
   position: relative;
   top: 5em;
   left: 13vw;
