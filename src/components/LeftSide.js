@@ -35,20 +35,15 @@ const LeftSide = () => {
       </ProfileCard>
       <Additional>
         <ul>
-          <li>
-            Groups
-          </li>
+          <li>Groups</li>
           <li>
             Events
             <img src="/images/plus-icon.svg" />
           </li>
-          <li>
-            Followed Hashtags
-          </li>
-              </ul>
-              <Discover>Discover more</Discover>
-          </Additional>
-          
+          <li>Followed Hashtags</li>
+        </ul>
+        <Discover>Discover more</Discover>
+      </Additional>
     </Container>
   );
 };
@@ -56,7 +51,11 @@ const LeftSide = () => {
 const Container = styled.div`
   overflow: hidden;
   border-radius: 0.5em;
-  //   background-color:white;
+  @media only screen and (min-width: 766px) and (max-width: 990px) {
+    // margin-left: -2em;
+    position: relative;
+    // left: -15%;
+  }
 `;
 
 const ProfileCard = styled.div`
@@ -69,7 +68,7 @@ const ProfileCard = styled.div`
       border-radius: 50%;
       transform: scale(0.3);
       margin-top: -7.5em;
-      cursor:pointer;
+      cursor: pointer;
     }
   }
 `;
@@ -192,34 +191,34 @@ const Additional = styled.div`
       justify-content: space-between;
     }
     &:hover {
-        text-decoration: underline;
-        cursor: pointer;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    img {
+      position: relative;
+      z-index: 1;
+      border-radius: 1em;
+      transform: scale(1.1);
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+        background-color: #efedec;
       }
-      img{
-        position: relative;
-        z-index: 1;
-        border-radius: 1em;
-        transform: scale(1.1);
-        opacity: .7;
-        &:hover{
-            opacity: 1;
-            background-color: #efedec;
-        }
-      }
+    }
   }
 `;
 const Discover = styled.p`
-text-align: center;
-font-size: 1.2em;
-border-top: 1px solid #efedec;
-padding-top: 1em;
-padding-bottom: 1em;
-color: grey;
-font-weight: 600;
-transition: all 100ms ease-in;
-&:hover{
+  text-align: center;
+  font-size: 1.2em;
+  border-top: 1px solid #efedec;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: grey;
+  font-weight: 600;
+  transition: all 100ms ease-in;
+  &:hover {
     cursor: pointer;
     background-color: #efedec;
-}
-`
+  }
+`;
 export default LeftSide;

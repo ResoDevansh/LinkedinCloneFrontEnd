@@ -4,8 +4,10 @@ import styled from "styled-components";
 const Middle = () => {
   return (
     <Container>
-      <img id="pp" src="/images/profileimg.jpg" alt="broken" />
-      <button id="post">Start a post</button>
+      <div id="header">
+        <img id="pp" src="/images/profileimg.jpg" alt="broken" />
+        <button id="post">Start a post</button>
+      </div>
       <Tools>
         <button>
           <img src="/images/phototool.svg" alt="broken" />
@@ -44,7 +46,7 @@ const Middle = () => {
           </FollowOrConnect>
         </Header>
         <Content>
-          <div>
+          <div id="content">
             The trick, however, is to build the habits that you set ups for
             short, focused periods of time so that you create a routine! So,
             I've set up a 25-day block of 5 things that I MUST do! <br></br>
@@ -85,19 +87,19 @@ const Middle = () => {
           </Reactions>
           <Share>
             <div>
-              <img src="/images/like.png" id="like" alt="broken"/>
+              <img src="/images/like.png" id="like" alt="broken" />
               <span>Like</span>
             </div>
             <div>
-              <img src="/images/comment.svg" id="comment" alt="broken"/>
+              <img src="/images/comment.svg" id="comment" alt="broken" />
               <span>Comment</span>
             </div>
             <div>
-              <img src="/images/repost.png" id="repost" alt="broken"/>
+              <img src="/images/repost.png" id="repost" alt="broken" />
               <span>Repost</span>
             </div>
             <div>
-              <img src="/images/send.svg" id="send" alt="broken"/>
+              <img src="/images/send.svg" id="send" alt="broken" />
               <span>Send</span>
             </div>
           </Share>
@@ -108,10 +110,14 @@ const Middle = () => {
 };
 
 const Container = styled.div`
-  border: 1px solid #dfdbda;
-  background-color: #ffffff;
+  // border: 1px solid #dfdbda;
+  // background-color: #ffffff;
   border-radius: 0.5em;
   height: 20%;
+  #header {
+    background-color: #ffffff;
+    border: 1px solid #dfdbda;
+  }
   #pp {
     height: 3em;
     border-radius: 50%;
@@ -139,11 +145,18 @@ const Container = styled.div`
       background-color: #efedec;
     }
   }
+  @media only screen and (min-width: 766px) and (max-width: 990px) {
+    width: 85%;
+  }
 `;
 
 const Tools = styled.div`
   display: flex;
   // border: 1px solid red;
+  border-bottom: 1px solid #dfdbda;
+  border-right: 1px solid #dfdbda;
+  border-left: 1px solid #dfdbda;
+  background-color: #ffffff;
   padding: 0 0.2em 0 0.2em;
   margin-top: -0.9em;
   justify-content: space-between;
@@ -173,21 +186,34 @@ const Tools = styled.div`
 `;
 
 const Post = styled.div`
-  border: 1px solid red;
+  border: 1px solid #dfdbda;
   margin-top: 2em;
   background-color: white;
 `;
 const Header = styled.div`
   display: flex;
+  border: 1px solid brown;
   justify-content: space-evenly;
   align-items: center;
-  //   border: 1px solid green;
-  // height: 5em;
   padding: 0;
   #intro {
-    // border: 1px solid red;
-    margin-left: -25%;
+    border: 1px solid red;
+    position: relative;
+    left: -22%;
     padding-top: 1em;
+    @media only screen and (min-width: 766px) and (max-width: 990px) {
+      position: relative;
+      left: -5%;
+    }
+    @media only screen and (min-width: 991px) and (max-width: 1450px) {
+      left: -13%;
+    }
+  }
+  @media only screen and (min-width: 766px) and (max-width: 990px) {
+    border: 1px solid green;
+  }
+  @media only screen and (min-width: 991px) and (max-width: 1450px) {
+    border: 1px solid green;
   }
 `;
 const Image = styled.div`
@@ -196,7 +222,17 @@ const Image = styled.div`
     height: 3em;
     border-radius: 50%;
     margin-top: 1em;
-    margin-left: -100%;
+    position: relative;
+    left: -3.5em;
+    // margin-left: -220%;
+    @media only screen and (min-width: 766px) and (max-width: 990px) {
+      //  border: 1px solid blue;
+      position: relative;
+      left: -40%;
+    }
+    @media only screen and (min-width: 991px) and (max-width: 1450px) {
+      left: -50%;
+    }
   }
 `;
 const Name = styled.div`
@@ -217,28 +253,38 @@ const About = styled.div`
     position: relative;
     top: -0.3em;
   }
+  @media only screen and (min-width: 766px) and (max-width: 990px) {
+    //  position: relative;
+    //  left: -20%;
+  }
 `;
 const Content = styled.div`
   font-size: 0.85em;
+  border: 1px solid red;
   padding: 0.5em;
   color: #151515;
   line-height: 1.5em;
+  overflow: hidden;
   #imgs {
     margin-top: 1em;
-    // border: 1px dashed blue;
+    border: 1px dashed blue;
     & > img {
       height: 50vh;
-      width: 104%;
-      position: relative;
-      left: -2%;
+      transform: scale(1.03);
       object-fit: cover;
       cursor: pointer;
     }
+  }
+  #content {
+    border: 1px solid orange;
+    padding: 0 1% 0 1%;
+    text-align: justify;
   }
 `;
 const Footer = styled.div``;
 const FollowOrConnect = styled.div`
   position: relative;
+  right: -10%;
   cursor: pointer;
   color: blue;
   //   border: 1px solid red;
@@ -248,6 +294,10 @@ const FollowOrConnect = styled.div`
   }
   &:hover {
     background-color: #efedec;
+  }
+  @media only screen and (min-width: 766px) and (max-width: 990px) {
+    position: relative;
+    right: -10%;
   }
 `;
 const Reactions = styled.div`

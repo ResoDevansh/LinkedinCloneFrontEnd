@@ -48,6 +48,9 @@ const Container = styled.div`
     font-weight: 500;
     transition: all 100ms ease-in;
   }
+  @media only screen and (max-width: 991px){
+    display: none;
+  }
 `;
 
 const Heading = styled.div`
